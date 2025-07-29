@@ -1,6 +1,8 @@
 import {
+  useNavigation,
   Form,
   Link,
+  NavLink,
   Outlet
 } from 'react-router'
 import type { Route } from './+types/sidebar'
@@ -19,6 +21,8 @@ export default function SidebarLayout({
   loaderData,
 }: Route.ComponentProps) {
   const { contacts } = loaderData
+
+  const navigation = useNavigation()
 
 
   return <>
@@ -63,7 +67,14 @@ export default function SidebarLayout({
               {
                 contacts.map(( contact ) => (
                   <li key={ contact.id }>
-                    <Link to={ `contacts/${ contact.id }`} >
+                    <NavLink
+                      className={({ isActive, isPending }) =>
+                        isActive ? 'active'
+                          : isPending ? 'pending'
+                            : ''
+                      }
+                      to={ `contacts/${ contact.id }`}
+                    >
                       {
                         contact.first || contact.last ? <>
                           { contact.first } { contact.last }
@@ -77,7 +88,7 @@ export default function SidebarLayout({
                           <span>★</span>
                         </> : null
                       }
-                    </Link>
+                    </NavLink>
                   </li>
                 ))
               }
@@ -91,7 +102,10 @@ export default function SidebarLayout({
       </nav>
     </div>
 
-    <div id={ 'detail' }>
+    <div
+      id={ 'detail' }
+      className={ navigation.state === 'loading' ? 'loading' : '' }
+    >
       <Outlet />
     </div>
   </>
