@@ -8,7 +8,7 @@ import {
 } from '../data'
 
 
-export async function clientLoader({
+export async function loader({
   params
 }: Route.LoaderArgs) {
   const contact = await getContact(params.contactId)
