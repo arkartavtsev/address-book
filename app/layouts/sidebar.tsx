@@ -1,5 +1,7 @@
+import { useEffect } from 'react'
 import {
   useNavigation,
+  useSubmit,
   Form,
   Link,
   NavLink,
@@ -10,19 +12,51 @@ import type { Route } from './+types/sidebar'
 import { getContacts } from '../data'
 
 
-export async function loader() {
-  const contacts = await getContacts()
+export async function loader({
+  request
+}: Route.LoaderArgs) {
+  const url = new URL(request.url)
+  const searchQuery = url.searchParams.get('q')
 
-  return { contacts }
+  const contacts = await getContacts(searchQuery)
+
+  return {
+    contacts,
+    searchQuery
+  }
 }
 
 
 export default function SidebarLayout({
   loaderData,
 }: Route.ComponentProps) {
-  const { contacts } = loaderData
+  const {
+    contacts,
+    searchQuery
+  } = loaderData
 
   const navigation = useNavigation()
+  const submit = useSubmit()
+
+  const isSearching =
+    navigation.location &&
+    new URLSearchParams(navigation.location.search).has('q')
+
+
+  const handleSearchFormChange = ( evt: React.FormEvent<HTMLFormElement> ) => {
+    const isFirstSearch = searchQuery === null
+
+    submit(evt.currentTarget, { replace: !isFirstSearch })
+  }
+
+
+  useEffect(() => {
+    const searchField = document.getElementById('q')
+
+    if (searchField instanceof HTMLInputElement) {
+      searchField.value = searchQuery || ''
+    }
+  }, [ searchQuery ])
 
 
   return <>
@@ -37,18 +71,21 @@ export default function SidebarLayout({
         <Form
           id={ 'search-form' }
           role={ 'search' }
+          onChange={ handleSearchFormChange }
         >
           <input
             id={ 'q' }
+            className={ isSearching ? 'loading' : ''}
             name={ 'q' }
             type={ 'search' }
-            aria-label={ 'Search contacts' }
+            defaultValue={ searchQuery || '' }
             placeholder={ 'Search' }
+            aria-label={ 'Search contacts' }
           />
 
           <div
             id={ 'search-spinner' }
-            hidden
+            hidden={ !isSearching }
             aria-hidden
           />
         </Form>
@@ -104,7 +141,7 @@ export default function SidebarLayout({
 
     <div
       id={ 'detail' }
-      className={ navigation.state === 'loading' ? 'loading' : '' }
+      className={ navigation.state === 'loading' && !isSearching ? 'loading' : '' }
     >
       <Outlet />
     </div>
