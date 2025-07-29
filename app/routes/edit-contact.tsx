@@ -1,6 +1,7 @@
 import {
   Form,
-  redirect
+  redirect,
+  useNavigate
 } from 'react-router'
 
 import type { Route } from './+types/edit-contact'
@@ -40,6 +41,13 @@ export default function EditContact({
   loaderData
 }: Route.ComponentProps) {
   const { contact } = loaderData
+
+  const navigate = useNavigate()
+
+
+  const handleCancelButtonClick = () => {
+    navigate(-1)
+  }
 
 
   return <>
@@ -114,7 +122,10 @@ export default function EditContact({
           Save
         </button>
 
-        <button type={ 'reset' }>
+        <button
+          type={ 'reset' }
+          onClick={ handleCancelButtonClick }
+        >
           Cancel
         </button>
       </p>
