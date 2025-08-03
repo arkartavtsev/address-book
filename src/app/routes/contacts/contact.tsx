@@ -1,6 +1,7 @@
 import {
+  useNavigate,
+  useSubmit,
   useFetcher,
-  Form
 } from 'react-router'
 
 import type { Route } from './+types/contact'
@@ -43,12 +44,22 @@ export default function Contact({
 }: Route.ComponentProps) {
   const { contact } = loaderData
 
+  const navigate = useNavigate()
+  const submit = useSubmit()
 
-  const handleDeleteFormSubmit = ( evt: React.FormEvent<HTMLFormElement> ) => {
+
+  const handleEditButtonClick = () => {
+    navigate(`/contacts/${ contact.id }/edit`)
+  }
+
+  const handleDeleteButtonClick = () => {
     const response = confirm('Please confirm you want to delete this record.')
 
-    if (!response) {
-      evt.preventDefault();
+    if (response) {
+      submit(null, {
+        action: `/contacts/${ contact.id }/destroy`,
+        method: 'post'
+      })
     }
   }
 
@@ -95,24 +106,16 @@ export default function Contact({
         }
 
         <div>
-          <Form action={ 'edit' }>
-            <Button type={ 'submit' }>
-              Edit
-            </Button>
-          </Form>
+          <Button onClick={ handleEditButtonClick }>
+            Edit
+          </Button>
 
-          <Form
-            action={ 'destroy' }
-            method={ 'post' }
-            onSubmit={ handleDeleteFormSubmit }
+          <Button
+            modifiers={[ 'danger' ]}
+            onClick={ handleDeleteButtonClick }
           >
-            <Button
-              modifiers={[ 'danger' ]}
-              type={ 'submit' }
-            >
-              Delete
-            </Button>
-          </Form>
+            Delete
+          </Button>
         </div>
       </div>
     </div>
