@@ -5,7 +5,7 @@ export default function About() {
   return <>
     <div id='about'>
       <Link to='/'>
-        ← Go to demo
+        ← Back to the demo
       </Link>
 
       <h1>
@@ -52,7 +52,7 @@ export default function About() {
         </h2>
 
         <p>
-          Check out the official documentation at <a href='https://reactrouter.com'>reactrouter.com</a> to learn more about building great web applications with React Router.
+          Check out the official documentation at <a href='https://reactrouter.com' target='_blank'>reactrouter.com</a> to learn more about building great web applications with React Router.
         </p>
       </div>
     </div>
