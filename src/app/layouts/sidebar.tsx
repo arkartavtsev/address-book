@@ -62,7 +62,7 @@ export default function SidebarLayout({
   return <>
     <div id='sidebar'>
       <h1>
-        <Link to='about'>
+        <Link to='/'>
           React Router Contacts
         </Link>
       </h1>
