@@ -8,9 +8,12 @@ import {
   NavLink,
   Outlet
 } from 'react-router'
+
 import type { Route } from './+types/sidebar'
 
 import { getContacts } from '../data'
+
+import { Button } from '@/shared/ui'
 
 
 export async function loader({
@@ -96,12 +99,9 @@ export default function SidebarLayout({
           />
         </Form>
 
-        <button
-          type={ 'button' }
-          onClick={ handleNewButtonClick }
-        >
+        <Button onClick={ handleNewButtonClick }>
           New
-        </button>
+        </Button>
       </div>
 
       <nav>

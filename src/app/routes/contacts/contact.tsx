@@ -11,6 +11,8 @@ import {
   updateContact
 } from '../../data'
 
+import { Button } from '@/shared/ui'
+
 
 export async function loader({
   params
@@ -94,9 +96,9 @@ export default function Contact({
 
         <div>
           <Form action={ 'edit' }>
-            <button type={ 'submit' }>
+            <Button type={ 'submit' }>
               Edit
-            </button>
+            </Button>
           </Form>
 
           <Form
@@ -104,9 +106,12 @@ export default function Contact({
             method={ 'post' }
             onSubmit={ handleDeleteFormSubmit }
           >
-            <button type={ 'submit' }>
+            <Button
+              modifiers={[ 'danger' ]}
+              type={ 'submit' }
+            >
               Delete
-            </button>
+            </Button>
           </Form>
         </div>
       </div>

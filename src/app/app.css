@@ -28,8 +28,7 @@ body {
   color: #121212;
 }
 textarea,
-input,
-button {
+input {
   font-size: 1rem;
   font-family: inherit;
   border: none;
@@ -42,22 +41,12 @@ button {
   line-height: 1.5;
   margin: 0;
 }
-button {
-  color: #3992ff;
-  font-weight: 500;
-}
 
 textarea:hover,
-input:hover,
-button:hover {
+input:hover {
   box-shadow:
     0 0px 1px hsla(0, 0%, 0%, 0.6),
     0 1px 2px hsla(0, 0%, 0%, 0.2);
-}
-
-button:active {
-  box-shadow: 0 0px 1px hsla(0, 0%, 0%, 0.4);
-  transform: translateY(1px);
 }
 
 #contact h1 {
@@ -71,10 +60,15 @@ button:active {
   margin-top: 0.25rem;
 }
 #contact h1 form button {
-  box-shadow: none;
-  font-size: 1.5rem;
+  font-family: inherit;
   font-weight: 400;
+  font-size: 1.5rem;
+  line-height: 1.5;
   padding: 0;
+  margin: 0;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
 }
 #contact h1 form button[value="true"] {
   color: #a4a4a4;
@@ -82,10 +76,6 @@ button:active {
 #contact h1 form button[value="true"]:hover,
 #contact h1 form button[value="false"] {
   color: #eeb004;
-}
-
-form[action$="destroy"] button {
-  color: #f44250;
 }
 
 .sr-only {
@@ -375,10 +365,6 @@ i {
   display: flex;
   gap: 0.5rem;
   margin: 0 0 0 8rem;
-}
-
-#contact-form p:last-child button[type="button"] {
-  color: inherit;
 }
 
 #index-page {

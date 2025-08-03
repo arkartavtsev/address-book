@@ -8,6 +8,8 @@ import type { Route } from '../contacts/+types/add'
 
 import { createContact } from '../../data'
 
+import { Button } from '@/shared/ui'
+
 
 export async function action({
   request
@@ -101,16 +103,17 @@ export default function AddContact() {
       </label>
 
       <p>
-        <button type={ 'submit' }>
+        <Button type={ 'submit' }>
           Save
-        </button>
+        </Button>
 
-        <button
+        <Button
+          modifiers={[ 'danger' ]}
           type={ 'reset' }
           onClick={ handleCancelButtonClick }
         >
           Cancel
-        </button>
+        </Button>
       </p>
     </Form>
   </>

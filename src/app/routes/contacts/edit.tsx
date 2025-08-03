@@ -11,6 +11,8 @@ import {
   updateContact
 } from '../../data'
 
+import { Button } from '@/shared/ui'
+
 
 export async function loader({
   params
@@ -118,16 +120,17 @@ export default function EditContact({
       </label>
 
       <p>
-        <button type={ 'submit' }>
+        <Button type={ 'submit' }>
           Save
-        </button>
+        </Button>
 
-        <button
+        <Button
+          modifiers={[ 'danger' ]}
           type={ 'reset' }
           onClick={ handleCancelButtonClick }
         >
           Cancel
-        </button>
+        </Button>
       </p>
     </Form>
   </>
