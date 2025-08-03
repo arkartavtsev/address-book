@@ -1,8 +1,10 @@
 import {
   type RouteConfig,
+
   layout,
   index,
-  route
+  route,
+  prefix
 } from '@react-router/dev/routes'
 
 
@@ -10,11 +12,14 @@ export default [
   layout('layouts/sidebar.tsx', [
     index('routes/home.tsx'),
 
-    route('add-contact', 'routes/add-contact.tsx'),
+    route('add-contact', 'routes/contacts/add.tsx'),
 
-    route('contacts/:contactId', 'routes/contact.tsx'),
-    route('contacts/:contactId/edit', 'routes/edit-contact.tsx'),
-    route('contacts/:contactId/destroy', 'routes/destroy-contact.tsx')
+    ...prefix('contacts/:contactId', [
+      index('routes/contacts/contact.tsx'),
+
+      route('edit', 'routes/contacts/edit.tsx'),
+      route('destroy', 'routes/contacts/delete.tsx')
+    ])
   ]),
 
   route('about', 'routes/about.tsx')

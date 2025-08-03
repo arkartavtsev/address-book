@@ -4,12 +4,12 @@ import {
   useNavigate
 } from 'react-router'
 
-import type { Route } from './+types/edit-contact'
+import type { Route } from '../contacts/+types/edit'
 
 import {
   getContact,
   updateContact
-} from '../data'
+} from '../../data'
 
 
 export async function loader({

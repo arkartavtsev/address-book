@@ -4,9 +4,9 @@ import {
   useNavigate
 } from 'react-router'
 
-import type { Route } from './+types/add-contact'
+import type { Route } from '../contacts/+types/add'
 
-import { createContact } from '../data'
+import { createContact } from '../../data'
 
 
 export async function action({

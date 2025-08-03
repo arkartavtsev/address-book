@@ -9,7 +9,7 @@ import {
   type ContactRecord,
   getContact,
   updateContact
-} from '../data'
+} from '../../data'
 
 
 export async function loader({
