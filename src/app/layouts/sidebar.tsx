@@ -109,7 +109,10 @@ export default function SidebarLayout({
           contacts.length ? <>
             <ul>
               {
-                contacts.map(( contact ) => (
+                contacts
+                  .sort(
+                    (a, b) => `${ a.first } ${ a.last }`.localeCompare(`${ b.first } ${ b.last }`)
+                  ).map(( contact ) => (
                   <li key={ contact.id }>
                     <NavLink
                       className={({ isActive, isPending }) =>
