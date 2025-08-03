@@ -1,6 +1,7 @@
 import { useEffect } from 'react'
 import {
   useNavigation,
+  useNavigate,
   useSubmit,
   Form,
   Link,
@@ -36,6 +37,7 @@ export default function SidebarLayout({
   } = loaderData
 
   const navigation = useNavigation()
+  const navigate = useNavigate()
   const submit = useSubmit()
 
   const isSearching =
@@ -47,6 +49,10 @@ export default function SidebarLayout({
     const isFirstSearch = searchQuery === null
 
     submit(evt.currentTarget, { replace: !isFirstSearch })
+  }
+
+  const handleNewButtonClick = () => {
+    navigate('/add-contact')
   }
 
 
@@ -90,11 +96,12 @@ export default function SidebarLayout({
           />
         </Form>
 
-        <Form method={ 'post' }>
-          <button type={ 'submit' }>
-            New
-          </button>
-        </Form>
+        <button
+          type={ 'button' }
+          onClick={ handleNewButtonClick }
+        >
+          New
+        </button>
       </div>
 
       <nav>
