@@ -1,0 +1,5 @@
+export { About as AboutView } from './About'
+export { AddContact as AddContactView } from './AddContact'
+export { Contact as ContactView } from './Contact'
+export { EditContact as EditContactView } from './EditContact'
+export { Home as HomeView } from './Home'

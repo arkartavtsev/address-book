@@ -1,0 +1,1 @@
+export { EditContact } from './ui'

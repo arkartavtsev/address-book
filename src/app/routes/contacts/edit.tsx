@@ -1,8 +1,4 @@
-import {
-  Form,
-  redirect,
-  useNavigate
-} from 'react-router'
+import { redirect } from 'react-router'
 
 import type { Route } from '../contacts/+types/edit'
 
@@ -11,7 +7,7 @@ import {
   updateContact
 } from '../../data'
 
-import { Button } from '@/shared/ui'
+import { EditContactView } from '@/views'
 
 
 export async function loader({
@@ -39,99 +35,13 @@ export async function action({
 }
 
 
-export default function EditContact({
+export default function ({
   loaderData
 }: Route.ComponentProps) {
   const { contact } = loaderData
 
-  const navigate = useNavigate()
-
-
-  const handleCancelButtonClick = () => {
-    navigate(-1)
-  }
-
 
   return <>
-    <Form
-      key={ contact.id }
-      id={ 'contact-form' }
-      method={ 'post' }
-    >
-      <p>
-        <span>
-          Name
-        </span>
-
-        <input
-          name={ 'first' }
-          type={ 'text' }
-          defaultValue={ contact.first }
-          placeholder={ 'First' }
-          aria-label={ 'First name' }
-        />
-
-        <input
-          name={ 'last' }
-          type={ 'text' }
-          defaultValue={ contact.last }
-          placeholder={ 'Last' }
-          aria-label={ 'Last name' }
-        />
-      </p>
-
-      <label>
-        <span>
-          Twitter
-        </span>
-
-        <input
-          name={ 'twitter' }
-          type={ 'text' }
-          defaultValue={ contact.twitter }
-          placeholder={ '@twitter-name' }
-        />
-      </label>
-
-      <label>
-        <span>
-          Avatar URL
-        </span>
-
-        <input
-          name={ 'avatar' }
-          type={ 'text' }
-          defaultValue={ contact.avatar }
-          placeholder={ 'https://example.com/avatar.jpg' }
-          aria-label={ 'Avatar URL' }
-        />
-      </label>
-
-      <label>
-        <span>
-          Notes
-        </span>
-
-        <textarea
-          name={ 'notes' }
-          defaultValue={ contact.notes }
-          rows={ 6 }
-        />
-      </label>
-
-      <p>
-        <Button type={ 'submit' }>
-          Save
-        </Button>
-
-        <Button
-          modifiers={[ 'danger' ]}
-          type={ 'reset' }
-          onClick={ handleCancelButtonClick }
-        >
-          Cancel
-        </Button>
-      </p>
-    </Form>
+    <EditContactView data={ contact } />
   </>
 }

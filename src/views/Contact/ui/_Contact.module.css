@@ -1,0 +1,49 @@
+.root {
+  display: flex;
+  align-items: flex-start;
+  gap: 2rem;
+}
+
+
+.image {
+  width: 12rem;
+  height: 12rem;
+  flex-shrink: 0;
+  background-color: #c8c8c8;
+  border-radius: 1.5rem;
+  object-fit: cover;
+}
+
+
+.info {
+  flex: 1;
+}
+
+
+.title {
+  display: flex;
+  align-items: baseline;
+  gap: 1rem;
+  margin: 0;
+  font-weight: 700;
+  font-size: 2rem;
+  line-height: 1.2;
+}
+
+
+.username {
+  margin: 0;
+  font-size: 1.5rem;
+}
+
+
+.notes {
+  white-space: break-spaces;
+}
+
+
+.buttonsWrapper {
+  display: flex;
+  gap: 0.5rem;
+  margin-top: 1rem;
+}

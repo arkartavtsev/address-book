@@ -1,18 +1,11 @@
-import {
-  useNavigate,
-  useSubmit,
-  useFetcher,
-} from 'react-router'
-
 import type { Route } from './+types/contact'
 
 import {
-  type ContactRecord,
   getContact,
   updateContact
 } from '../../data'
 
-import { Button } from '@/shared/ui'
+import { ContactView } from '@/views'
 
 
 export async function loader({
@@ -27,6 +20,7 @@ export async function loader({
   return { contact }
 }
 
+
 export async function action({
   params,
   request
@@ -39,111 +33,13 @@ export async function action({
 }
 
 
-export default function Contact({
+export default function ({
   loaderData,
 }: Route.ComponentProps) {
   const { contact } = loaderData
 
-  const navigate = useNavigate()
-  const submit = useSubmit()
-
-
-  const handleEditButtonClick = () => {
-    navigate(`/contacts/${ contact.id }/edit`)
-  }
-
-  const handleDeleteButtonClick = () => {
-    const response = confirm('Please confirm you want to delete this record.')
-
-    if (response) {
-      submit(null, {
-        action: `/contacts/${ contact.id }/destroy`,
-        method: 'post'
-      })
-    }
-  }
-
 
   return <>
-    <div id={ 'contact' }>
-      <div>
-        <img
-          key={ contact.avatar }
-          src={ contact.avatar }
-          alt={ `${ contact.first } ${ contact.last } avatar` }
-        />
-      </div>
-
-      <div>
-        <h1>
-          {
-            contact.first || contact.last ? <>
-              { contact.first } { contact.last }
-            </> : <>
-              <i>No Name</i>
-            </>
-          }
-
-          <Favorite contact={ contact } />
-        </h1>
-
-        {
-          contact.twitter ? <>
-            <p>
-              <a href={ `https://twitter.com/${  contact.twitter}` }>
-                { contact.twitter }
-              </a>
-            </p>
-          </> : null
-        }
-
-        {
-          contact.notes ? <>
-            <p>
-              { contact.notes }
-            </p>
-          </> : null
-        }
-
-        <div>
-          <Button onClick={ handleEditButtonClick }>
-            Edit
-          </Button>
-
-          <Button
-            modifiers={[ 'danger' ]}
-            onClick={ handleDeleteButtonClick }
-          >
-            Delete
-          </Button>
-        </div>
-      </div>
-    </div>
-  </>
-}
-
-
-function Favorite({
-  contact
-}: {
-  contact: Pick<ContactRecord, 'favorite'>
-}) {
-  const fetcher = useFetcher()
-
-  const isFavorite = fetcher.formData
-    ? fetcher.formData.get('favorite') === 'true'
-    : contact.favorite
-
-
-  return <>
-    <fetcher.Form method={ 'post' }>
-      <button
-        name={ 'favorite' }
-        value={ isFavorite ? 'false' : 'true' }
-        aria-label={ isFavorite ? 'Remove from favorites' : 'Add to favorites' }
-      >
-        { isFavorite ? '★' : '☆' }
-      </button>
-    </fetcher.Form>
+    <ContactView data={ contact } />
   </>
 }

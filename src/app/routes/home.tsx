@@ -1,16 +1,8 @@
-import { Link } from 'react-router'
+import { HomeView } from '@/views'
 
 
-export default function Home() {
+export default function () {
   return <>
-    <p id='index-page'>
-      This is a demo for React Router
-
-      <br />
-
-      <Link to='about'>
-        About this demo
-      </Link>
-    </p>
+    <HomeView />
   </>
 }
