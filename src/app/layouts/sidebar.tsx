@@ -14,6 +14,12 @@ import { getContacts } from '../data'
 
 import { AddContact } from '@/features'
 
+import { FormField } from '@/shared/ui'
+import {
+  ArrowCycleIcon,
+  MagnifierIcon
+} from '@/shared/icons'
+
 
 export async function loader({
   request
@@ -46,6 +52,9 @@ export default function SidebarLayout({
     new URLSearchParams(navigation.location.search).has('q')
 
 
+  const LoadingIcon = () => <ArrowCycleIcon className={ isSearching ? 'search-spinner' : undefined } />
+
+
   const handleSearchFormChange = ( evt: React.FormEvent<HTMLFormElement> ) => {
     const isFirstSearch = searchQuery === null
 
@@ -54,7 +63,7 @@ export default function SidebarLayout({
 
 
   useEffect(() => {
-    const searchField = document.getElementById('q')
+    const searchField = document.querySelector('input[name="q"]')
 
     if (searchField instanceof HTMLInputElement) {
       searchField.value = searchQuery || ''
@@ -76,20 +85,20 @@ export default function SidebarLayout({
           role={ 'search' }
           onChange={ handleSearchFormChange }
         >
-          <input
-            id={ 'q' }
-            className={ isSearching ? 'loading' : ''}
-            name={ 'q' }
-            type={ 'search' }
-            defaultValue={ searchQuery || '' }
-            placeholder={ 'Search' }
-            aria-label={ 'Search contacts' }
-          />
-
-          <div
-            id={ 'search-spinner' }
-            hidden={ !isSearching }
-            aria-hidden
+          <FormField
+            label={{
+              text: 'Search contacts',
+              isHidden: true
+            }}
+            fields={[
+              {
+                name: 'q',
+                type: 'search',
+                placeholder: 'Search',
+                defaultValue: searchQuery || '',
+                icon: isSearching ? LoadingIcon : MagnifierIcon
+              }
+            ]}
           />
         </Form>
 

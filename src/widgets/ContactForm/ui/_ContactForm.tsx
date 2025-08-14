@@ -8,7 +8,10 @@ import type { ComponentProps } from './_ContactForm.types.ts'
 
 import styles from './_ContactForm.module.css'
 
-import { Button } from '@/shared/ui'
+import {
+  FormField,
+  Button
+} from '@/shared/ui'
 
 
 export const ContactForm = ({
@@ -39,87 +42,67 @@ export const ContactForm = ({
       id={ 'contact-form' }
       method={ 'post' }
     >
-      <div className={ styles.field }>
-        <label
-          className={ styles.fieldLabel }
-          htmlFor={ 'first' }
-        >
-          Name
-        </label>
+      <FormField
+        label={{
+          text: 'Name',
+          className: styles.fieldLabel
+        }}
+        fields={[
+          {
+            name: 'first',
+            placeholder: 'First',
+            defaultValue: first,
+            'aria-label': 'First name'
+          }, {
+            name: 'last',
+            placeholder: 'Last',
+            defaultValue: last,
+            'aria-label': 'Last name'
+          }
+        ]}
+      />
 
-        <input
-          className={ styles.fieldInput }
-          id={ 'first' }
-          name={ 'first' }
-          type={ 'text' }
-          defaultValue={ first }
-          placeholder={ 'First' }
-          aria-label={ 'First name' }
-        />
+      <FormField
+        label={{
+          text: 'Twitter',
+          className: styles.fieldLabel
+        }}
+        fields={[
+          {
+            name: 'twitter',
+            placeholder: '@twitter-name',
+            defaultValue: twitter
+          }
+        ]}
+      />
 
-        <input
-          className={ styles.fieldInput }
-          id={ 'last' }
-          name={ 'last' }
-          type={ 'text' }
-          defaultValue={ last }
-          placeholder={ 'Last' }
-          aria-label={ 'Last name' }
-        />
-      </div>
+      <FormField
+        label={{
+          text: 'Avatar URL',
+          className: styles.fieldLabel
+        }}
+        fields={[
+          {
+            name: 'avatar',
+            placeholder: 'https://example.com/avatar.jpg',
+            defaultValue: avatar
+          }
+        ]}
+      />
 
-      <div className={ styles.field }>
-        <label
-          className={ styles.fieldLabel }
-          htmlFor={ 'twitter' }
-        >
-          Twitter
-        </label>
-
-        <input
-          className={ styles.fieldInput }
-          id={ 'twitter' }
-          name={ 'twitter' }
-          type={ 'text' }
-          defaultValue={ twitter }
-          placeholder={ '@twitter-name' }
-        />
-      </div>
-
-      <div className={ styles.field }>
-        <label
-          className={ styles.fieldLabel }
-          htmlFor={ 'avatar' }
-        >
-          Avatar URL
-        </label>
-
-        <input
-          className={ styles.fieldInput }
-          id={ 'avatar' }
-          name={ 'avatar' }
-          type={ 'text' }
-          defaultValue={ avatar }
-          placeholder={ 'https://example.com/avatar.jpg' }
-        />
-      </div>
-
-      <div className={ styles.field }>
-        <label
-          className={ styles.fieldLabel }
-          htmlFor={ 'notes' }
-        >
-          Notes
-        </label>
-
-        <textarea
-          className={ styles.fieldInput }
-          id={ 'notes' }
-          name={ 'notes' }
-          defaultValue={ notes }
-          rows={ 6 }
-        />
-      </div>
+      <FormField
+        label={{
+          text: 'Notes',
+          className: styles.fieldLabel
+        }}
+        fields={[
+          {
+            name: 'notes',
+            defaultValue: notes
+          }
+        ]}
+        as={ 'textarea' }
+      />
 
       <div className={ styles.buttonsWrapper }>
         <Button type={ 'submit' }>
