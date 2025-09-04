@@ -1,4 +1,4 @@
-import { Link } from 'react-router'
+import { Link } from '@/shared/ui'
 
 import styles from './_Home.module.css'
 
@@ -17,10 +17,7 @@ export const Home = () => {
         This is&nbsp;a&nbsp;demo for React Router
       </p>
 
-      <Link
-        className={ styles.link }
-        to={ 'about' }
-      >
+      <Link to={ 'about' }>
         About this demo
       </Link>
     </div>
