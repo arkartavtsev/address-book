@@ -61,7 +61,7 @@ export const SidebarLayout = ({
         <img
           className={ styles.titleLogo }
           width={ 35 }
-          src={ 'logo-mini.svg' }
+          src={ '/logo-mini.svg' }
           alt={ '' }
         />
 
