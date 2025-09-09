@@ -1,0 +1,54 @@
+import { Link } from '@/shared/ui'
+
+
+export const About = () => {
+  return <>
+    <main>
+      <Link to={ '/' }>
+        ← Back to&nbsp;the demo
+      </Link>
+
+      <h1>
+        About React Router Contacts
+      </h1>
+
+      <p>
+        This is&nbsp;a&nbsp;demo application showing off some of&nbsp;the powerful features of&nbsp;React Router, including dynamic routing, nested routes, loaders, actions, and more.
+      </p>
+
+      <h2>
+        Features
+      </h2>
+
+      <p>
+        Explore the demo to&nbsp;see how React Router handles:
+      </p>
+
+      <ul>
+        <li>
+          Data loading and mutations with loaders and actions
+        </li>
+
+        <li>
+          Nested routing with parent/child relationships
+        </li>
+
+        <li>
+          URL-based routing with dynamic segments
+        </li>
+
+        <li>
+          Pending and optimistic&nbsp;UI
+        </li>
+      </ul>
+
+      <h2>
+        Learn More
+      </h2>
+
+      <p>
+        Check out the official documentation&nbsp;at <Link to={ 'https://reactrouter.com' } isExternal>reactrouter.com</Link> to&nbsp;learn more about building great web applications with React Router.
+      </p>
+    </main>
+  </>
+}
