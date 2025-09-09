@@ -146,13 +146,13 @@ export const SidebarLayout = ({
       </div>
     </div>
 
-    <div
+    <main
       className={classNames(
         styles.content,
         navigation.state === 'loading' && !isSearching && styles.content_isLoading
       )}
     >
       <Outlet />
-    </div>
+    </main>
   </>
 }

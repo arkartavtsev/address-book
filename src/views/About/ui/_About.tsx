@@ -1,11 +1,9 @@
 import { Link } from '@/shared/ui'
 
-import styles from './_About.module.css'
-
 
 export const About = () => {
   return <>
-    <div className={ styles.root }>
+    <main>
       <Link to={ '/' }>
         ← Back to&nbsp;the demo
       </Link>
@@ -53,6 +51,6 @@ export const About = () => {
           Check out the official documentation&nbsp;at <Link to='https://reactrouter.com' isExternal>reactrouter.com</Link> to&nbsp;learn more about building great web applications with React Router.
         </p>
       </div>
-    </div>
+    </main>
   </>
 }
