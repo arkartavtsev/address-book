@@ -16,7 +16,8 @@ import {
 
 export const ContactForm = ({
   className,
-  initialData
+  initialData,
+  title
 }: ComponentProps) => {
   const {
     id,
@@ -36,6 +37,10 @@ export const ContactForm = ({
 
 
   return <>
+    <h1 className={ 'sr-only' }>
+      { title }
+    </h1>
+
     <Form
       key={ id }
       className={ classNames(className, styles.root) }

@@ -3,6 +3,6 @@ import { ContactForm } from '@/widgets'
 
 export const AddContact = () => {
   return <>
-    <ContactForm />
+    <ContactForm title={ 'Add contact' } />
   </>
 }

@@ -6,6 +6,10 @@ import styles from './_Home.module.css'
 export const Home = () => {
   return <>
     <div className={ styles.root }>
+      <h1 className={ 'sr-only' }>
+        React Router Contacts
+      </h1>
+
       <img
         className={ styles.logo }
         width={ 540 }

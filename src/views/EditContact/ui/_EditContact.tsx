@@ -7,6 +7,9 @@ export const EditContact = ({
   data
 }: ComponentProps) => {
   return <>
-    <ContactForm initialData={ data } />
+    <ContactForm
+      title={ 'Edit contact' }
+      initialData={ data }
+    />
   </>
 }
