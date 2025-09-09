@@ -39,11 +39,10 @@
 }
 
 
-.title {
+.logoWrapper {
   display: flex;
   align-items: center;
   gap: 1rem;
-  margin: 0;
   order: 1;
   font-weight: 500;
   font-size: 1rem;
@@ -51,7 +50,7 @@
 }
 
 
-.titleLogo {
+.logo {
   width: 35px;
   height: auto;
 }

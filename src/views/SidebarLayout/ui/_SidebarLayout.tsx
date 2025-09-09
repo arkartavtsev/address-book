@@ -57,9 +57,9 @@ export const SidebarLayout = ({
 
   return <>
     <div className={ styles.sidebar }>
-      <h1 className={ classNames(styles.sidebarItem, styles.title) }>
+      <div className={ classNames(styles.sidebarItem, styles.logoWrapper) }>
         <img
-          className={ styles.titleLogo }
+          className={ styles.logo }
           width={ 35 }
           src={ '/logo-mini.svg' }
           alt={ '' }
@@ -68,7 +68,7 @@ export const SidebarLayout = ({
         <Link to={ '/' }>
           React Router Contacts
         </Link>
-      </h1>
+      </div>
 
       <div className={ classNames(styles.sidebarItem, styles.controls) }>
         <Form
