@@ -7,13 +7,13 @@ import {
   updateContact
 } from '../../data'
 
+import { getMetaTitle } from '@/shared/helpers'
+
 import { EditContactView } from '@/views'
 
 
 export function meta() {
-  return [
-    { title: 'Edit contact | React Router Contacts' }
-  ]
+  return [ getMetaTitle('Edit contact') ]
 }
 
 

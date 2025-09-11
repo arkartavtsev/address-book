@@ -1,10 +1,10 @@
+import { getMetaTitle } from '@/shared/helpers'
+
 import { HomeView } from '@/views'
 
 
 export function meta() {
-  return [
-    { title: 'React Router Contacts' }
-  ]
+  return [ getMetaTitle() ]
 }
 
 
