@@ -7,6 +7,13 @@ import { createContact } from '../../data'
 import { AddContactView } from '@/views'
 
 
+export function meta() {
+  return [
+    { title: 'Add contact | React Router Contacts' }
+  ]
+}
+
+
 export async function action({
   request
 }: Route.ActionArgs) {

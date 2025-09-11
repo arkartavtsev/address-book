@@ -10,6 +10,13 @@ import {
 import { EditContactView } from '@/views'
 
 
+export function meta() {
+  return [
+    { title: 'Edit contact | React Router Contacts' }
+  ]
+}
+
+
 export async function loader({
   params
 }: Route.LoaderArgs) {
@@ -21,6 +28,7 @@ export async function loader({
 
   return { contact }
 }
+
 
 export async function action({
   params,

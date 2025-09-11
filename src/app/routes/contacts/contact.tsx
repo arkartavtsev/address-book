@@ -8,6 +8,16 @@ import {
 import { ContactView } from '@/views'
 
 
+export function meta({ loaderData }: Route.ComponentProps) {
+  const { contact } = loaderData
+  const { first, last } = contact
+
+  return [
+    { title: `${ first } ${ last } | React Router Contacts` }
+  ]
+}
+
+
 export async function loader({
   params
 }: Route.LoaderArgs) {
