@@ -7,7 +7,14 @@ import {
   updateContact
 } from '../../data'
 
+import { getMetaTitle } from '@/shared/helpers'
+
 import { EditContactView } from '@/views'
+
+
+export function meta() {
+  return [ getMetaTitle('Edit contact') ]
+}
 
 
 export async function loader({
@@ -21,6 +28,7 @@ export async function loader({
 
   return { contact }
 }
+
 
 export async function action({
   params,

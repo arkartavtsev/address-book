@@ -5,7 +5,17 @@ import {
   updateContact
 } from '../../data'
 
+import { getMetaTitle } from '@/shared/helpers'
+
 import { ContactView } from '@/views'
+
+
+export function meta({ loaderData }: Route.ComponentProps) {
+  const { contact } = loaderData
+  const { first, last } = contact
+
+  return [ getMetaTitle(`${ first || '' } ${ last || '' }`.trim()) ]
+}
 
 
 export async function loader({

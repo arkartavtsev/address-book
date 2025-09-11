@@ -1,5 +1,6 @@
 import {
   isRouteErrorResponse,
+  Meta,
   Links,
   Scripts,
   ScrollRestoration,
@@ -22,6 +23,7 @@ export function HydrateFallback() {
     </div>
   </>
 }
+
 
 export function ErrorBoundary({ error }: Route.ErrorBoundaryProps) {
   let message = 'Oops!'
@@ -62,10 +64,9 @@ export function Layout({ children }: { children: React.ReactNode }) {
       <head>
         <meta charSet='utf-8' />
         <meta name='viewport' content='width=device-width, initial-scale=1' />
-
-        <title>React Router Contacts</title>
         <meta name='description' content='A demo application showing off some of the powerful features of React Router' />
 
+        <Meta />
         <Links /> 
       </head>
 
