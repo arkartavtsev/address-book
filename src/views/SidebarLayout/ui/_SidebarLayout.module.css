@@ -1,16 +1,3 @@
-@keyframes progress {
-  0% {
-    background: #e3e3e3;
-  }
-  50% {
-    background: hsla(224, 98%, 58%, 0.5);
-  }
-  100% {
-    background: #e3e3e3;
-  }
-}
-
-
 .sidebar {
   display: flex;
   flex-direction: column;
@@ -54,65 +41,8 @@
 }
 
 
-.contactsWrapper {
+.contacts {
   flex: 1;
-  overflow: auto;
-}
-
-
-.contactsList {
-  padding: 0;
-  margin: 0;
-  list-style: none;
-}
-
-
-.contactItem:not(:last-child) {
-  margin-bottom: 0.25rem;
-}
-
-
-.contactLink {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 1rem;
-  padding: 0.5rem;
-  color: inherit;
-  text-decoration: none;
-  white-space: pre;
-  border-radius: 8px;
-  overflow: hidden;
-  transition: background-color 100ms;
-}
-
-.contactLink:hover {
-  background-color: #e3e3e3;
-}
-
-.contactLink:global(.active) {
-  color: white;
-  background-color: hsl(224, 98%, 58%);
-}
-
-.contactLink:global(.pending) {
-  animation: progress 2s infinite ease-in-out;
-  animation-delay: 200ms;
-}
-
-
-.contactFavoriteMark {
-  color: #eeb004;
-}
-
-.contactLink:global(.active) .contactFavoriteMark {
-  color: inherit;
-}
-
-
-.emptyMessage {
-  margin: 0;
-  color: #818181;
 }
 
 

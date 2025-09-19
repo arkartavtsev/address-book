@@ -1,6 +1,5 @@
 import {
   useNavigation,
-  NavLink,
   Outlet
 } from 'react-router'
 import classNames from 'classnames'
@@ -12,6 +11,8 @@ import { Search } from '@/widgets'
 import { AddContact } from '@/features'
 
 import { Link } from '@/shared/ui'
+
+import { Contacts } from './Contacts'
 
 import styles from './_SidebarLayout.module.css'
 
@@ -48,54 +49,14 @@ export const SidebarLayout = ({
         <AddContact />
       </div>
 
-      <div className={classNames(
-        styles.sidebarItem,
-        styles.sidebarItem_separated,
-        styles.contactsWrapper
-      )}>
-        {
-          contacts.length ? <>
-            <nav>
-              <ul className={ styles.contactsList }>
-                {
-                  contacts
-                    .sort(
-                      (a, b) => `${ a.first } ${ a.last }`.localeCompare(`${ b.first } ${ b.last }`)
-                    ).map(( contact ) => (
-                      <li
-                        key={ contact.id }
-                        className={ styles.contactItem }
-                      >
-                        <NavLink
-                          className={ styles.contactLink }
-                          to={ `contacts/${ contact.id }` }
-                        >
-                          {
-                            contact.first || contact.last ? <>
-                              { `${ contact.first } ${ contact.last }`.trim() }
-                            </> : <>
-                              No Name
-                            </>
-                          }
-
-                          {
-                            contact.favorite && <>
-                              <span className={ styles.contactFavoriteMark }>★</span>
-                            </>
-                          }
-                        </NavLink>
-                      </li>
-                    ))
-                }
-              </ul>
-            </nav>
-          </> : <>
-            <p className={ styles.emptyMessage }>
-              No contacts
-            </p>
-          </>
-        }
-      </div>
+      <Contacts
+        className={classNames(
+          styles.sidebarItem,
+          styles.sidebarItem_separated,
+          styles.contacts
+        )}
+        data={ contacts }
+      />
     </div>
 
     <main
