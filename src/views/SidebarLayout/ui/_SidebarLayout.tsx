@@ -71,28 +71,30 @@ export const SidebarLayout = ({
       </div>
 
       <div className={ classNames(styles.sidebarItem, styles.controls) }>
-        <Form
-          id={ 'search-form' }
-          role={ 'search' }
-          onChange={ handleSearchFormChange }
-        >
-          <FormField
-            label={{
-              text: 'Search contacts',
-              isHidden: true
-            }}
-            fields={[
-              {
-                name: 'q',
-                type: 'search',
-                placeholder: 'Search',
-                defaultValue: searchQuery || '',
-                icon: isSearching ? LoadingIcon : MagnifierIcon,
-                autoComplete: 'off'
-              }
-            ]}
-          />
-        </Form>
+        <search>
+          <Form
+            id={ 'search-form' }
+            role={ 'search' }
+            onChange={ handleSearchFormChange }
+          >
+            <FormField
+              label={{
+                text: 'Search contacts',
+                isHidden: true
+              }}
+              fields={[
+                {
+                  name: 'q',
+                  type: 'search',
+                  placeholder: 'Search',
+                  defaultValue: searchQuery || '',
+                  icon: isSearching ? LoadingIcon : MagnifierIcon,
+                  autoComplete: 'off'
+                }
+              ]}
+            />
+          </Form>
+        </search>
 
         <AddContact />
       </div>
