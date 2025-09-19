@@ -13,7 +13,7 @@ export const Home = () => {
       <img
         className={ styles.logo }
         width={ 540 }
-        src={ 'home/logo.svg' }
+        src={ 'logo.svg' }
         alt={ 'React Router' }
       />
 
