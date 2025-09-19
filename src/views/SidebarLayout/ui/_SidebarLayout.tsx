@@ -87,7 +87,8 @@ export const SidebarLayout = ({
                 type: 'search',
                 placeholder: 'Search',
                 defaultValue: searchQuery || '',
-                icon: isSearching ? LoadingIcon : MagnifierIcon
+                icon: isSearching ? LoadingIcon : MagnifierIcon,
+                autoComplete: 'off'
               }
             ]}
           />
