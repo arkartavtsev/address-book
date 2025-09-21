@@ -21,19 +21,6 @@ export function meta() {
 }
 
 
-export function HydrateFallback() {
-  return <>
-    <div id='loading-splash'>
-      <div id='loading-splash-spinner' />
-
-      <p>
-        Loading, please wait...
-      </p>
-    </div>
-  </>
-}
-
-
 export function ErrorBoundary({ error }: Route.ErrorBoundaryProps) {
   let status: string | number | undefined
   let statusText: string | undefined
