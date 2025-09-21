@@ -28,11 +28,6 @@ main {
   padding: 2rem 4rem;
 }
 
-code {
-  font-family:
-    source-code-pro, Menlo, Monaco, Consolas, "Courier New", monospace;
-}
-
 
 .sr-only {
   position: absolute;
@@ -46,14 +41,6 @@ code {
   border-width: 0;
 }
 
-
-#error-page {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  width: 100%;
-}
 
 #loading-splash {
   position: fixed;

@@ -9,7 +9,16 @@ import {
 
 import type { Route } from './+types/root'
 
+import { getMetaTitle } from '@/shared/helpers'
+
+import { ErrorBoundaryView } from '@/views'
+
 import './app.css'
+
+
+export function meta() {
+  return [ getMetaTitle() ]
+}
 
 
 export function HydrateFallback() {
@@ -26,34 +35,27 @@ export function HydrateFallback() {
 
 
 export function ErrorBoundary({ error }: Route.ErrorBoundaryProps) {
-  let message = 'Oops!'
-  let details = 'An unexpected error occurred.'
+  let status: string | number | undefined
+  let statusText: string | undefined
   let stack: string | undefined
 
+
   if (isRouteErrorResponse(error)) {
-    message = error.status === 404 ? '404' : 'Error'
-    details =
-      error.status === 404
-        ? 'The requested page could not be found.'
-        : error.statusText || details
-  } else if (import.meta.env.DEV && error && error instanceof Error) {
-    details = error.message
+    status = error.status
+    statusText = error.status === 404
+      ? 'The requested page could not be found.'
+      : error.statusText
+  } else if (error instanceof Error) {
     stack = error.stack
   }
 
-  return <>
-    <main id='error-page'>
-      <h1>{ message }</h1>
-      <p>{ details }</p>
 
-      {
-        stack && <>
-          <pre>
-            <code>{ stack }</code>
-          </pre>
-        </>
-      }
-    </main>
+  return <>
+    <ErrorBoundaryView
+      status={ status }
+      statusText={ statusText }
+      stack={ stack }
+    />
   </>
 }
 
