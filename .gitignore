@@ -1,8 +1,9 @@
 .DS_Store
 .vscode
 /node_modules/
+.vercel
+/_stuff
 
 # React Router
 /.react-router/
 /build/
-.vercel

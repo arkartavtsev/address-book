@@ -1,0 +1,69 @@
+@keyframes progress {
+  0%,
+  100% {
+    background: #e3e3e3;
+  }
+
+  50% {
+    background: hsla(224, 98%, 58%, 0.5);
+  }
+}
+
+
+.root {
+  overflow: auto;
+}
+
+
+.list {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+
+.link {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 0.5rem;
+  color: inherit;
+  text-decoration: none;
+  white-space: pre;
+  border-radius: 8px;
+  overflow: hidden;
+  transition: background-color 100ms;
+}
+
+.link:hover {
+  background-color: #e3e3e3;
+}
+
+.link:global(.active) {
+  color: white;
+  background-color: hsl(224, 98%, 58%);
+}
+
+.link:global(.pending) {
+  animation: progress 2s infinite ease-in-out;
+  animation-delay: 200ms;
+}
+
+
+.favoriteMark {
+  color: #eeb004;
+}
+
+.link:global(.active) .favoriteMark {
+  color: inherit;
+}
+
+
+.emptyMessage {
+  margin: 0;
+  color: #818181;
+}
