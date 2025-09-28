@@ -40,29 +40,29 @@
   border-radius: 8px;
   overflow: hidden;
   transition: background-color 100ms;
-}
 
-.link:hover {
-  background-color: color.$ui-gray-light;
-}
-
-.link:global(.active) {
-  color: color.$ui-white;
-  background-color: color.$ui-blue-dark;
-}
-
-.link:global(.pending) {
-  animation: progress 2s infinite ease-in-out;
-  animation-delay: 200ms;
+  &:hover {
+    background-color: color.$ui-gray-light;
+  }
+  
+  &:global(.active) {
+    color: color.$ui-white;
+    background-color: color.$ui-blue-dark;
+  }
+  
+  &:global(.pending) {
+    animation: progress 2s infinite ease-in-out;
+    animation-delay: 200ms;
+  }
 }
 
 
 .favoriteMark {
   color: color.$ui-yellow;
-}
-
-.link:global(.active) .favoriteMark {
-  color: inherit;
+  
+  .link:global(.active) & {
+    color: inherit;
+  }
 }
 
 

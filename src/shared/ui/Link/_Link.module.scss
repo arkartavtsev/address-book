@@ -4,8 +4,8 @@
 .root {
   color: color.$ui-blue-light;
   text-decoration: none;
-}
 
-.root:hover {
-  text-decoration: underline;
+  &:hover {
+    text-decoration: underline;
+  }
 }

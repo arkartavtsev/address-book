@@ -17,13 +17,14 @@
   background-color: transparent;
   border: none;
   cursor: pointer;
+
+  &[value="true"] {
+    color: color.$ui-gray-dark;
+  }
+  
+  &[value="true"]:hover,
+  &[value="false"] {
+    color: color.$ui-yellow;
+  }
 }
 
-.button[value="true"] {
-  color: color.$ui-gray-dark;
-}
-
-.button[value="true"]:hover,
-.button[value="false"] {
-  color: color.$ui-yellow;
-}

@@ -12,11 +12,11 @@
 
 .sidebarItem {
   padding: 1rem 2rem;
-}
 
-.sidebarItem_separated {
-  border-top: 1px solid color.$ui-gray-light;
-  border-bottom: 1px solid color.$ui-gray-light;
+  &_separated {
+    border-top: 1px solid color.$ui-gray-light;
+    border-bottom: 1px solid color.$ui-gray-light;
+  }
 }
 
 
@@ -49,8 +49,10 @@
 }
 
 
-.content_isLoading {
-  opacity: 0.25;
-  transition: opacity 200ms;
-  transition-delay: 200ms;
+.content {
+  &_isLoading {
+    opacity: 0.25;
+    transition: opacity 200ms;
+    transition-delay: 200ms;
+  }
 }

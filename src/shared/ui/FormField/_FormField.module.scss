@@ -24,11 +24,11 @@
   height: 1rem;
   color: color.$ui-gray-darkest;
   transform: translateY(-50%);
-}
 
-.icon svg {
-  width: 100%;
-  height: 100%;
+  svg {
+    width: 100%;
+    height: 100%;
+  }
 }
 
 
@@ -45,14 +45,14 @@
     0 0px 1px rgba(color.$default-black, 0.2),
     0 1px 2px rgba(color.$default-black, 0.2);
   resize: none;
-}
 
-.input:hover {
-  box-shadow:
-    0 0px 1px rgba(color.$default-black, 0.6),
-    0 1px 2px rgba(color.$default-black, 0.2);
-}
+  &:hover {
+    box-shadow:
+      0 0px 1px rgba(color.$default-black, 0.6),
+      0 1px 2px rgba(color.$default-black, 0.2);
+  }
 
-.input_withIcon {
-  padding-left: 2rem;
+  &_withIcon {
+    padding-left: 2rem;
+  }
 }
