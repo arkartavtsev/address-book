@@ -6,12 +6,12 @@ import classNames from 'classnames'
 
 import type { ComponentProps } from './_ContactForm.types.ts'
 
-import styles from './_ContactForm.module.css'
-
 import {
   FormField,
   Button
 } from '@/shared/ui'
+
+import styles from './_ContactForm.module.scss'
 
 
 export const ContactForm = ({

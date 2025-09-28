@@ -13,7 +13,7 @@ import {
   MagnifierIcon
 } from '@/shared/icons'
 
-import styles from './_Search.module.css'
+import styles from './_Search.module.scss'
 
 
 export const Search = ({

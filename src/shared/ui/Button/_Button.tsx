@@ -2,7 +2,7 @@ import classNames from 'classnames'
 
 import type { ComponentProps } from './_Button.types.ts'
 
-import styles from './_Button.module.css'
+import styles from './_Button.module.scss'
 
 
 export const Button = ({

@@ -13,7 +13,7 @@ import { getMetaTitle } from '@/shared/helpers'
 
 import { ErrorBoundaryView } from '@/views'
 
-import './app.css'
+import './styles/index.scss'
 
 
 export function meta() {

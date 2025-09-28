@@ -16,5 +16,14 @@ export default defineConfig({
     alias: {
       '@': path.resolve(__dirname, './src')
     }
+  },
+  css: {
+    preprocessorOptions: {
+      scss: {
+        loadPaths: [
+          path.join(__dirname, './src/app/styles')
+        ]
+      }
+    }
   }
 })

@@ -14,7 +14,7 @@ import { Link } from '@/shared/ui'
 
 import { Contacts } from './Contacts'
 
-import styles from './_SidebarLayout.module.css'
+import styles from './_SidebarLayout.module.scss'
 
 
 export const SidebarLayout = ({

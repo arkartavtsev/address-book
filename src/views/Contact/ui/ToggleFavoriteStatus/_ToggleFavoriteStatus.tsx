@@ -3,7 +3,7 @@ import classNames from 'classnames'
 
 import type { ComponentProps } from './_ToggleFavoriteStatus.types.ts'
 
-import styles from './_ToggleFavoriteStatus.module.css'
+import styles from './_ToggleFavoriteStatus.module.scss'
 
 
 export const ToggleFavoriteStatus = ({

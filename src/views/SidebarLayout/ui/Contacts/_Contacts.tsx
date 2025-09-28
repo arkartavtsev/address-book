@@ -3,7 +3,7 @@ import classNames from 'classnames'
 
 import type { ComponentProps } from './_Contacts.types.ts'
 
-import styles from './_Contacts.module.css'
+import styles from './_Contacts.module.scss'
 
 
 export const Contacts = ({

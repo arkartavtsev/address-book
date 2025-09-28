@@ -3,12 +3,12 @@ import {
   useSubmit
 } from 'react-router'
 
-import styles from './_Contact.module.css'
-
 import type { ComponentProps } from './_Contact.types.ts'
 
 import { Button } from '@/shared/ui'
 import { ToggleFavoriteStatus } from './ToggleFavoriteStatus'
+
+import styles from './_Contact.module.scss'
 
 
 export const Contact = ({

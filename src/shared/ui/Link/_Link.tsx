@@ -3,7 +3,7 @@ import classNames from 'classnames'
 
 import type { ComponentProps } from './_Link.types.ts'
 
-import styles from './_Link.module.css'
+import styles from './_Link.module.scss'
 
 
 export const Link = ({

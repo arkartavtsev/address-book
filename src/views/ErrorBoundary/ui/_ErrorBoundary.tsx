@@ -1,6 +1,6 @@
 import type { ComponentProps } from './_ErrorBoundary.types.ts'
 
-import styles from './_ErrorBoundary.module.css'
+import styles from './_ErrorBoundary.module.scss'
 
 
 export const ErrorBoundary = ({

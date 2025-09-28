@@ -1,6 +1,6 @@
 import { Link } from '@/shared/ui'
 
-import styles from './_Home.module.css'
+import styles from './_Home.module.scss'
 
 
 export const Home = () => {

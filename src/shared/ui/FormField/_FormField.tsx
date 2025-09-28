@@ -3,7 +3,7 @@ import classNames from 'classnames'
 
 import type { ComponentProps } from './_FormField.types.ts'
 
-import styles from './_FormField.module.css'
+import styles from './_FormField.module.scss'
 
 
 const MAX_TEXTAREA_ROWS = 6
