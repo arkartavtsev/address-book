@@ -1,3 +1,6 @@
+@use 'consts/color';
+
+
 .root {
   display: flex;
   flex-direction: column;
@@ -23,6 +26,6 @@
   padding: 2rem;
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New", monospace;
   white-space: pre-wrap;
-  background-color: #e3e3e3;
+  background-color: color.$ui-gray-light;
   border-radius: 8px;
 }

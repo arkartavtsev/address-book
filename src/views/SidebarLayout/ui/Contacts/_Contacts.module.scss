@@ -1,11 +1,14 @@
+@use 'consts/color';
+
+
 @keyframes progress {
   0%,
   100% {
-    background: #e3e3e3;
+    background-color: color.$ui-gray-light;
   }
 
   50% {
-    background: hsla(224, 98%, 58%, 0.5);
+    background-color: color.$ui-gray-dark;
   }
 }
 
@@ -40,12 +43,12 @@
 }
 
 .link:hover {
-  background-color: #e3e3e3;
+  background-color: color.$ui-gray-light;
 }
 
 .link:global(.active) {
-  color: white;
-  background-color: hsl(224, 98%, 58%);
+  color: color.$ui-white;
+  background-color: color.$ui-blue-dark;
 }
 
 .link:global(.pending) {
@@ -55,7 +58,7 @@
 
 
 .favoriteMark {
-  color: #eeb004;
+  color: color.$ui-yellow;
 }
 
 .link:global(.active) .favoriteMark {
@@ -65,5 +68,5 @@
 
 .emptyMessage {
   margin: 0;
-  color: #818181;
+  color: color.$ui-gray-darkest;
 }

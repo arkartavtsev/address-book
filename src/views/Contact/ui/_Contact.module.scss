@@ -1,3 +1,6 @@
+@use 'consts/color';
+
+
 .root {
   display: flex;
   align-items: flex-start;
@@ -9,7 +12,7 @@
   width: 12rem;
   height: 12rem;
   flex-shrink: 0;
-  background-color: #c8c8c8;
+  background-color: color.$ui-gray-light;
   border-radius: 1.5rem;
   object-fit: cover;
 }

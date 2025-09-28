@@ -1,3 +1,6 @@
+@use 'consts/color';
+
+
 .root {
   padding: 0.5rem 0.75rem;
   margin: 0;
@@ -5,27 +8,27 @@
   font-weight: 500;
   font-size: 1rem;
   line-height: 1.5;
-  color: #3992ff;
-  background-color: white;
+  color: color.$ui-blue-light;
+  background-color: color.$bg-default;
   border: none;
   border-radius: 8px;
   box-shadow:
-    0 0px 1px hsla(0, 0%, 0%, 0.2),
-    0 1px 2px hsla(0, 0%, 0%, 0.2);
+    0 0px 1px rgba(color.$default-black, 0.2),
+    0 1px 2px rgba(color.$default-black, 0.2);
   cursor: pointer;
 }
 
 .root:hover {
   box-shadow:
-    0 0px 1px hsla(0, 0%, 0%, 0.6),
-    0 1px 2px hsla(0, 0%, 0%, 0.2);
+    0 0px 1px rgba(color.$default-black, 0.6),
+    0 1px 2px rgba(color.$default-black, 0.2);
 }
 
 .root:active {
-  box-shadow: 0 0px 1px hsla(0, 0%, 0%, 0.4);
+  box-shadow: 0 0px 1px rgba(color.$default-black, 0.4);
   transform: translateY(1px);
 }
 
 .root_danger {
-  color: #f44250;
+  color: color.$ui-red;
 }

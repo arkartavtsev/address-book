@@ -1,9 +1,12 @@
+@use 'consts/color';
+
+
 .sidebar {
   display: flex;
   flex-direction: column;
   width: 22rem;
-  background-color: #f7f7f7;
-  border-right: 1px solid #e3e3e3;
+  background-color: color.$ui-gray-lightest;
+  border-right: 1px solid color.$ui-gray-light;
 }
 
 
@@ -12,8 +15,8 @@
 }
 
 .sidebarItem_separated {
-  border-top: 1px solid #e3e3e3;
-  border-bottom: 1px solid #e3e3e3;
+  border-top: 1px solid color.$ui-gray-light;
+  border-bottom: 1px solid color.$ui-gray-light;
 }
 
 

@@ -1,5 +1,8 @@
+@use 'consts/color';
+
+
 .root {
-  color: #3992ff;
+  color: color.$ui-blue-light;
   text-decoration: none;
 }
 

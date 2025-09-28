@@ -1,3 +1,6 @@
+@use 'consts/color';
+
+
 .root {
   display: flex;
   align-items: center;
@@ -17,10 +20,10 @@
 }
 
 .button[value="true"] {
-  color: #a4a4a4;
+  color: color.$ui-gray-dark;
 }
 
 .button[value="true"]:hover,
 .button[value="false"] {
-  color: #eeb004;
+  color: color.$ui-yellow;
 }

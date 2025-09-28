@@ -1,9 +1,12 @@
+@use 'consts/color';
+
+
 .root {
   display: flex;
   flex-direction: column;
   align-items: center;
   text-align: center;
-  color: #818181;
+  color: color.$ui-gray-darkest;
 }
 
 
